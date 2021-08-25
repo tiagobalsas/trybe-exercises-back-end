@@ -1,8 +1,8 @@
 const rdl = require('readline-sync');
 
 function calculaImc(peso, altura) {
-  peso = rdl.question(`Qual seu peso?  `);
-  altura = rdl.question(`Qual sua altura?  `);
+  peso = rdl.questionFloat(`Qual seu peso?  `);
+  altura = rdl.questionFloat(`Qual sua altura?  `);
 
   let imc = peso / (altura * altura);
 
