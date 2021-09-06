@@ -19,4 +19,14 @@ app.get('/hello', (req, res) => {
   res.status(200).json({ message: `Hello, ${name}` });
 });
 
+app.post('/greetings', (req, res) => {
+  const { name, age } = req.body;
+
+  if (parseInt(age, 10) <= 17) {
+    return res.status(401).json({ message: `Unauthorized` });
+  }
+
+  res.status(200).json({ message: `Hello, ${name}!` });
+});
+
 app.listen(PORT, HTTP_OK, () => console.log(`Server Online -> PORT ${PORT}`));
