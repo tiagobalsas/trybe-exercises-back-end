@@ -10,4 +10,8 @@ app.use((err, req, res, next) => {
   res.status(500).send(`Algo deu errado! Mensagem: ${err.message}`);
 });
 
+app.get('/ping', (req, res) => {
+  res.status(200).json({ message: 'pong' });
+});
+
 app.listen(PORT, HTTP_OK, () => console.log(`Server Online -> PORT ${PORT}`));
